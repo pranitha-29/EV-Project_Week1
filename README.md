@@ -30,8 +30,24 @@ This project predicts the **price range of electric vehicles (EVs)** based on th
 - Scikit-learn
 - Jupyter Notebook
 
+🤖 Week 2 – Model Building & Evaluation
 
+Objectives
+-Load cleaned dataset from Week 1
+-Train multiple machine-learning models
+-Evaluate with R², MAE, MSE
+-Save best model for future deployment
+
+Models Trained
+| Model                   | R² Score       | MAE        | Notes                       |
+| ----------------------- | -------------- | ---------- | --------------------------- |
+| Linear Regression       | ~0.26          | ~48        | Baseline                    |
+| Decision Tree Regressor | Higher than LR | Lower MAE  | Captured nonlinear patterns |
+| Random Forest Regressor | 🏆 Best        | Lowest MAE | Chosen as final model       |
+
+Output
+-Best model saved as model.pkl using joblib
 
 ## 🚀 Next Steps
-- Week 2: Build advanced models (RandomForest, XGBoost)
 - Week 3: Create Streamlit Web App with Chatbot
+
