@@ -1,61 +1,77 @@
-# Electric Vehicle Price Prediction (Week 1)
+⚡ Electric Vehicle (EV) Price Prediction & Chatbot Assistant
+🚗 A Machine Learning + Generative AI Project
 
-## 📘 Project Overview
-This project predicts the **price range of electric vehicles (EVs)** based on their specifications such as battery capacity, top speed, acceleration, and seating capacity.
+This project predicts the price range of Electric Vehicles (EVs) based on their specifications such as battery capacity, top speed, acceleration, towing capacity, and seating capacity.
+Additionally, it includes a Gemini-powered Chatbot that answers questions about electric vehicles, helping users understand EV technology, performance, and trends.
 
-## 🧩 Week 1 Objectives
-- Import and clean the dataset (`cars_data_RAW.csv`)
-- Handle missing values and rename columns
-- Convert string values (e.g., "km/h", "sec") to numeric
-- Perform Exploratory Data Analysis (EDA)
-- Build a baseline Linear Regression model
-- Save the cleaned dataset for future modeling
+📆 Project Overview
 
-## 📊 Dataset
-**Source:** Electric Vehicle Dataset 2024 (Kaggle)  
-**Files Used:**
-- `cars_data_RAW.csv` (original data)
-- `cars_data_cleaned.csv` (cleaned for ML)
+| **Week**   | **Tasks Completed**                                                                                                                                                                  |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Week 1** | Problem definition, dataset collection, data cleaning, exploratory data analysis (EDA), and basic regression model setup.                                                            |
+| **Week 2** | Model training with multiple algorithms (Linear Regression, Decision Tree, Random Forest), model evaluation using R², MAE, and MSE metrics, and saving the best model (`model.pkl`). |
+| **Week 3** | Building an interactive Streamlit web app integrating EV price prediction with a Google Gemini chatbot assistant.                                                                    |
 
-## 🧠 Model
-- Model: Linear Regression
-- Target: `price_range`
-- R² Score: ~0.26
-- MAE: ~48
+🎯 Problem Statement
 
-## 🧰 Tools & Libraries
-- Python
-- Pandas, NumPy
-- Matplotlib, Seaborn
-- Scikit-learn
-- Jupyter Notebook
+Predict the driving range or price range of an electric vehicle based on its specifications — including battery capacity, top speed, acceleration, towing capacity, and other key performance indicators.
 
-🤖 Week 2 – Model Building & Evaluation
+📊 Dataset Details
 
-Objectives
--Load cleaned dataset from Week 1
--Train multiple machine-learning models
--Evaluate with R², MAE, MSE
--Save best model for future deployment
+Source: Kaggle EV Cars Dataset
 
-### 📊 Week 2 Results
+Key Columns:
 
-| Model | R² Score | MAE | MSE |
-|:------|:---------:|:----:|:----:|
-| Linear Regression | 0.263 | 48.18 | 7737.37 |
-| Decision Tree Regressor | **0.538** | **35.63** | **4856.47** |
-| Random Forest Regressor | 0.459 | 34.95 | 5686.60 |
+battery → Battery capacity (kWh)
 
-**Analysis:**
-- Decision Tree achieved the highest R² score (~0.54), indicating better explanatory power.  
-- Random Forest achieved the lowest MAE (~34.95), meaning lower prediction error on average.  
-- Linear Regression served as a baseline and performed less effectively.  
+top_speed → Maximum speed (km/h)
 
-**Selected Model:** ✅ Random Forest Regressor (balanced performance & robustness)  
-Saved as `model.pkl` for use in the Streamlit app (Week 3).
+zero_to_hundred → Acceleration (0–100 km/h in seconds)
+
+towing_capacity_in_kg → Towing capacity (kg)
+
+number_of_seats → Total seats
+
+price_range → Target variable (price category in ₹ Lakhs)
 
 
-## 🚀 Next Steps
-- Week 3: Create Streamlit Web App with Chatbot
+🧠 Machine Learning Models Used
+| Model                 | R²   | MAE   | MSE     |
+| --------------------- | ---- | ----- | ------- |
+| **Linear Regression** | 0.26 | 48.18 | 7737.37 |
+| **Decision Tree**     | 0.54 | 35.63 | 4856.47 |
+| **Random Forest**     | 0.46 | 34.95 | 5686.60 |
 
 
+🧩 App Features
+🔹 EV Price Predictor
+
+-Takes EV specs as input
+
+-Predicts estimated price range (in ₹ Lakhs) using the trained ML model
+
+🔹 Gemini Chatbot Assistant
+
+-Built using Google Gemini 2.5 Flash model
+
+-Answers general queries about EVs
+
+-Explains insights like battery efficiency, charging trends, and sustainability
+
+🚀 Improvisations Done
+
+-Added feature engineering (power_efficiency, performance_index, weight_factor) to improve model accuracy.
+
+-Integrated Gemini AI chatbot for intelligent, conversational responses.
+
+-Built a Streamlit web interface for end-to-end user interaction.
+
+-Saved the best-performing model and automated predictions.
+
+🏁 Results
+
+-Best R² Score: 0.54 (Decision Tree)
+
+-App allows both prediction and interactive chatbot conversation.
+
+-Clean UI built with Streamlit, ready for deployment.
